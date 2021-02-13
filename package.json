@@ -1,0 +1,28 @@
+{
+  "name": "jelperbot_streamversion",
+  "version": "1.0.0",
+  "description": "A custom version of the jelperBot, created with the purpose of taking care of the streamer's discord server's.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "InfinityNT",
+  "license": "ISC",
+  "dependencies": {
+    "commando-provider-mongo": "^2.0.2",
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "github:discordjs/Commando",
+    "eslint": "^7.18.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.11.13",
+    "pm2": "^4.5.4",
+    "twitch": "^4.4.5"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@commands": "./commands/commands",
+    "@features": "./features/features",
+    "@schemas": "./schemas",
+    "@utils": "./utils"
+  }
+}
