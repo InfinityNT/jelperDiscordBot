@@ -16,6 +16,5 @@ module.exports = class Test extends Commando.Command {
 
 	run() {
 		console.log('test command running...');
-		console.log('test command finished.');
 	}
 };

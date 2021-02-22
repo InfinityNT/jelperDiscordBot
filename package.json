@@ -16,7 +16,7 @@
     "module-alias": "^2.2.2",
     "mongoose": "^5.11.13",
     "pm2": "^4.5.4",
-    "twitch": "^4.4.5"
+    "public-ip": "^4.0.3"
   },
   "_moduleAliases": {
     "@root": ".",
