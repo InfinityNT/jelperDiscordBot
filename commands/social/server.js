@@ -16,7 +16,7 @@ module.exports = class minecraftServer extends Commando.Command {
 
 	run(message, args) {
 		if (!args) {
-			message.channel.send('¿Qué deseas hacer?. Recuerda que debes introducir alguna instrucción: open || kill || status || reboot');
+			message.channel.send('¿Qué deseas hacer?. Recuerda que debes introducir alguna instrucción: open || kill || status || reboot || ip');
 			return;
 		}
 
@@ -25,17 +25,22 @@ module.exports = class minecraftServer extends Commando.Command {
 
 		switch (i) {
 		case 'open':
-			minecraft.startServer(message);
+			minecraft.start(message);
 			break;
 		case 'kill':
-			minecraft.killServer(message);
+			minecraft.kill(message);
 			break;
 		case 'status':
 			minecraft.checkStatus(message);
 			break;
 		case 'reboot':
-			minecraft.rebootServer(message);
+			minecraft.reboot(message);
 			break;
+		case 'ip':
+			minecraft.ip(message);
+			break;
+		default:
+			message.channel.send('Recuerda que debes introducir alguna instrucción: open || kill || status || reboot || ip');
 		}
 	}
 };

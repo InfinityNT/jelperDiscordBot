@@ -78,7 +78,13 @@ const checkStatus = (message) => {
 	}
 };
 
-module.exports.startServer = startServer;
-module.exports.killServer = killServer;
-module.exports.rebootServer = rebootServer;
+const serverIp = async (message) => {
+	const currentIp = await publicIp.v4();
+	message.channel.send(`La ip actual es: ${currentIp}`);
+};
+
+module.exports.start = startServer;
+module.exports.kill = killServer;
+module.exports.reboot = rebootServer;
 module.exports.checkStatus = checkStatus;
+module.exports.ip = serverIp;
