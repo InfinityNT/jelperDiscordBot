@@ -28,7 +28,16 @@ client
 	});
 
 client.registry
-	.registerDefaults()
+	.registerDefaultTypes()
+	.registerDefaultGroups()
+	.registerDefaultCommands({
+		help: false,
+		prefix: true,
+		ping: false,
+		eval: false,
+		unknownCommand: false,
+		commandState: true,
+	})
 	.registerGroups([
 		['dev', 'Developers commands'],
 		['misc', 'Misc commands'],

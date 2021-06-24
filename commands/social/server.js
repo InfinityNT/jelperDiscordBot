@@ -8,13 +8,17 @@ module.exports = class minecraftServer extends Commando.Command {
 			group: 'social',
 			memberName: 'server',
 			description: 'Maneja el servidor de Minecraft desde Discord!',
-			userPermissions: ['ADMINISTRATOR'],
 			details: 'Con este comando podrás abrir, cerrar y reiniciar el servidor de Minecraft de manera remota.',
 			hidden: true,
 		});
 	}
 
 	run(message, args) {
+		if (!message.member.roles.cache.some(r => r.name === 'Dragons')) {
+			message.channel.send('No tienes los permisos necesarios para usar este comando.');
+			return;
+		}
+
 		if (!args) {
 			message.channel.send('¿Qué deseas hacer?. Recuerda que debes introducir alguna instrucción: open || kill || status || reboot || ip');
 			return;
